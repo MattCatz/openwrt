@@ -85,7 +85,7 @@ endef
 DTC=$(wildcard $(LINUX_DIR)/scripts/dtc/dtc)
 
 define Build/Compile/Trusted-Firmware-A
-	+unset CC; \
+	+unset CC AS LD; \
 	$(MAKE) $(PKG_JOBS) -C $(PKG_BUILD_DIR) \
 		CROSS_COMPILE=$(TARGET_CROSS) \
 		OPENSSL_DIR=$(STAGING_DIR_HOST) \
