@@ -178,7 +178,7 @@ ifeq ($(CONFIG_TARGET_x86)$(CONFIG_USE_GLIBC)$(CONFIG_INSTALL_GCCGO),yyy)
   TARGET_CFLAGS+=-fno-split-stack
 endif
 
-CFLAGS:=$(HOST_CFLAGS) -pipe
+CFLAGS:=$(HOST_CFLAGS) -pipe -Wno-format-security
 ifneq ($(shell gcc --version 2>&1 | grep -E "Apple.(LLVM|clang)"),)
   CFLAGS+= -fbracket-depth=512
 endif
